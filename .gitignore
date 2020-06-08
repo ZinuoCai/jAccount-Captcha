@@ -1,3 +1,4 @@
 .idea/
-data/source_images/
-data/split_images/
+data/
+__pycache__/
+models/__pycache__/

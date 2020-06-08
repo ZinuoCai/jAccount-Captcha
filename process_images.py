@@ -4,10 +4,10 @@ import numpy as np
 # label source_images size
 image_count = 250
 # output size
-output_size = 28
+output_size = 32
 
 # read lables
-with open('data/labels.csv', 'r') as f:
+with open('data/MyData/labels.csv', 'r') as f:
     lines = f.readlines()
 
 for i in range(image_count):
@@ -58,8 +58,9 @@ for i in range(image_count):
 
     for j in range(1, label_count):
         label = split_label[j]
-        filename = 'data/split_images/%s/%04d.png' % (label, i)
-        single_img = color_img[top:down, left + single_width * (j - 1):left + single_width * j, :]
+        filename = 'data/gray_split_images/%s/%04d.png' % (label, i)
+        # single_img = color_img[top:down, left + single_width * (j - 1):left + single_width * j, :]
+        single_img = erosion[top:down, left + single_width * (j - 1):left + single_width * j]
         single_img = cv.copyMakeBorder(single_img, vertical_padding, vertical_padding,
                                        horizontal_padding, horizontal_padding,
                                        cv.BORDER_CONSTANT, value=[255, 255, 255])

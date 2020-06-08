@@ -12,7 +12,7 @@ headers = {
                   'Chrome/83.0.4103.61 Safari/537.36',
 }
 base_url = 'https://jaccount.sjtu.edu.cn/jaccount/captcha?uuid=%s&t=%s' % (uuid, t)
-base_dir = 'data/source_images/'
+base_dir = 'data/MyData/source_images/'
 
 if not os.path.exists(base_dir):
     os.makedirs(base_dir)
