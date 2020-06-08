@@ -7,7 +7,7 @@ class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
         # convolution
-        self.c1 = nn.Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+        self.c1 = nn.Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
         self.c3 = nn.Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
         self.c5 = nn.Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
 
@@ -44,6 +44,6 @@ class LeNet(nn.Module):
 
 
 if __name__ == '__main__':
-    X = torch.randn([32, 3, 32, 32])
+    X = torch.randn([32, 1, 32, 32])
     model = LeNet()
     print(model(X))
